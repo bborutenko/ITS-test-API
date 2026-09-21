@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>
+            {{ app_name|default('ITS Test API') }} — Email confirmation
+        </title>
+        <style>
+            body {
+                margin: 0;
+                padding: 24px;
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    Arial, "Helvetica Neue", sans-serif;
+                background: #f6f7fb;
+                color: #111827;
+            }
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                background: #ffffff;
+                border: 1px solid #e5e7eb;
+                border-radius: 12px;
+                box-shadow: 0 4px 16px rgba(17, 24, 39, 0.08);
+                overflow: hidden;
+            }
+            .header {
+                background: #142a22;
+                color: #fcf9f3;
+                padding: 20px 24px;
+                text-align: center;
+            }
+            .brand {
+                margin: 0;
+                font-size: 18px;
+                letter-spacing: 0.2px;
+            }
+            .content {
+                padding: 20px 24px 28px;
+            }
+            .title {
+                margin: 0 0 8px;
+                font-size: 20px;
+                font-weight: 700;
+                color: #111827;
+            }
+            .text {
+                margin: 0 0 16px;
+                font-size: 14px;
+                line-height: 1.6;
+                color: #374151;
+            }
+            .cta {
+                display: inline-block;
+                background: #c9a85c;
+                color: #142a22 !important;
+                text-decoration: none;
+                padding: 12px 18px;
+                border-radius: 10px;
+                font-weight: 700;
+                border: none;
+                cursor: pointer;
+            }
+            .note {
+                margin-top: 16px;
+                font-size: 12px;
+                color: #6b7280;
+            }
+            code,
+            .code {
+                font-family:
+                    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                    "Liberation Mono", "Courier New", monospace;
+                font-size: 12px;
+                background: #f3f4f6;
+                border: 1px solid #e5e7eb;
+                border-radius: 6px;
+                padding: 2px 6px;
+            }
+            .footer {
+                text-align: center;
+                padding: 16px 24px 20px;
+                font-size: 12px;
+                color: #9ca3af;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1 class="brand">{{ app_name|default('ITS Test API') }}</h1>
+            </div>
+            <div class="content">
+                <h2 class="title">Confirm your email</h2>
+                <p class="text">
+                    Thank you for registering with {{ app_name|default('ITS
+                    Test API') }}. Follow the link below to confirm your email
+                    address and finish creating your account.
+                </p>
+                <a href="{{ confirm_url }}" class="cta">Confirm email</a>
+                <p class="note">
+                    The link is valid for 10 minutes and can be used only once.
+                    If you did not request registration, just ignore this
+                    email.
+                </p>
+            </div>
+            <div class="footer">
+                © {{ current_year|default(2026) }} {{ app_name|default('ITS
+                Test API') }}. All rights reserved.
+            </div>
+        </div>
+    </body>
+</html>
